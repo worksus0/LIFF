@@ -256,11 +256,11 @@ function liffGetButtonStateCharacteristic(characteristic) {
     characteristic.startNotifications().then(() => {
         characteristic.addEventListener('characteristicvaluechanged', e => {
             const val = (new Uint8Array(e.target.value.buffer))[0];
-            const val1 = (new Uint8Array(e.target.value.buffer))[1];
-            showTemp(val);
-            showMoisture(val1);
+            console.log(val)
             if (val > 0) {
                 // press
+                showTemp(val);
+                showMoisture(val);
                 uiToggleStateButton(true);
             } else {
                 // release
