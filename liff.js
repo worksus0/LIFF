@@ -70,9 +70,9 @@ function showTemp(val) {
     el.innerText = val;
 }
 
-function showMoisture(val) {
+function showMoisture(val1) {
     const el = document.getElementById("moisture");
-    el.innerText = val;
+    el.innerText = val1;
 }
 
 function uiToggleDeviceConnected(connected) {
