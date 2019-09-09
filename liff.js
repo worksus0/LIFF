@@ -70,6 +70,11 @@ function showTemp(val) {
     el.innerText = val;
 }
 
+function showMoisture(val) {
+    const el = document.getElementById("moisture");
+    el.innerText = val;
+}
+
 function uiToggleDeviceConnected(connected) {
     const elStatus = document.getElementById("status");
     const elControls = document.getElementById("controls");
@@ -252,6 +257,7 @@ function liffGetButtonStateCharacteristic(characteristic) {
         characteristic.addEventListener('characteristicvaluechanged', e => {
             const val = (new Uint8Array(e.target.value.buffer))[0];
             showTemp(val);
+            showMoisture(val);
             if (val > 0) {
                 // press
                 uiToggleStateButton(true);
