@@ -259,7 +259,6 @@ function liffGetButtonStateCharacteristic(characteristic) {
             console.log(val)
             if (val > 0) {
                 // press
-                showTemp(val);
                 showMoisture(val);
                 uiToggleStateButton(true);
             } else {
